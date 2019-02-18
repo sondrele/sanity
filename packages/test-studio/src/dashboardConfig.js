@@ -11,10 +11,7 @@ export default {
     },
     [
       {
-        name: 'recentDocs',
-        options: {
-          limit: 5
-        }
+        name: 'dev/info'
       },
       {
         name: 'members'
@@ -25,7 +22,10 @@ export default {
         name: 'dataUsage'
       },
       {
-        name: 'dev/info'
+        name: 'recentDocs',
+        options: {
+          limit: 5
+        }
       }
     ]
   ]

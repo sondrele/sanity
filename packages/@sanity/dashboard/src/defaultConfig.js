@@ -1,6 +1,6 @@
 export default {
   title: 'Dashboard',
-  defaultSections: [
+  sections: [
     {
       type: 'dev/welcome'
     },

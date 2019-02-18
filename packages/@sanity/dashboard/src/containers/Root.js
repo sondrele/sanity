@@ -1,6 +1,6 @@
 /* eslint-disable id-length */
 
-import widgets from 'all:part:@sanity/dashboard/widget'
+import widgets from 'all:part:@sanity/dashboard/widget?'
 import React from 'react'
 import Dashboard from '../components/Dashboard'
 import config from '../config'

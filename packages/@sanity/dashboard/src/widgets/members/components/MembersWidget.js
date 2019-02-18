@@ -25,6 +25,8 @@ function MembersWidget(props) {
 
   const isDisabled = props.email.length === 0 || !props.isValid || props.isSending
 
+  const members = props.users.filter(user => !user.isCurrentUser)
+
   return (
     <form className={styles.root} onSubmit={handleSubmit}>
       <Widget
@@ -39,9 +41,9 @@ function MembersWidget(props) {
           </div>
         }
       >
-        {props.users.filter(user => !user.isCurrentUser).map(user => {
+        {members.map(user => {
           return (
-            <div key={user.id}>
+            <div key={user.id} className={styles.memberItem}>
               {user.displayName}
               {user.isCurrentUser}
             </div>

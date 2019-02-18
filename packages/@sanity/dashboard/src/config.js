@@ -1,4 +1,3 @@
-// import sanityConfig from 'config:sanity'
 import customConfig from 'part:@sanity/dashboard/config'
 import defaultConfig from './defaultConfig'
 
@@ -9,8 +8,6 @@ config.title = config.title || defaultConfig.title
 // eslint-disable-next-line no-process-env
 config.mode = process.env.NODE_ENV || 'development'
 
-if (!config.sections) {
-  config.sections = defaultConfig.defaultSections
-}
+config.sections = config.sections || defaultConfig.sections
 
 export default config
