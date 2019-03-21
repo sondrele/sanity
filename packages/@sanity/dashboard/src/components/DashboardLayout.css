@@ -1,6 +1,8 @@
 @import 'part:@sanity/base/theme/variables-style';
 
-.missingWidget {
-  padding: var(--medium-padding);
-  color: var(--state-danger-color);
+.root {
+  padding: var(--large-padding) var(--medium-padding) calc(var(--large-padding) * 2);
+  max-width: 100rem;
+  margin: 0 auto;
+  box-sizing: border-box;
 }

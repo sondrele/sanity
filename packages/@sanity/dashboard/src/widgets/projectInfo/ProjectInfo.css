@@ -1,5 +1,11 @@
 @import 'part:@sanity/base/theme/variables-style';
 
+.subGrid {
+  @nest & > * + * {
+    margin-top: var(--medium-padding);
+  }
+}
+
 .container {
   composes: container from 'part:@sanity/dashboard/widget-styles';
 }
@@ -16,6 +22,10 @@
   color: var(--state-danger-color);
 }
 
+.content {
+  composes: content from 'part:@sanity/dashboard/widget-styles';
+}
+
 .table {
   text-align: left;
   border-collapse: collapse;
@@ -28,19 +38,15 @@
 
   @nest & td, & th {
     min-width: 5em;
-    padding: var(--medium-padding) var(--small-padding);
+    padding: calc(var(--small-padding) / 2) var(--small-padding);
   }
 
   @nest & td:first-child, & th:first-child {
-    padding-left: calc(var(--medium-padding) + var(--small-padding));
+    padding-left: var(--medium-padding);
   }
 
   @nest & td:last-child, & th:last-child {
-    padding-right: calc(var(--medium-padding) + var(--small-padding));
-  }
-
-  @nest & tr {
-    border-bottom: 1px solid var(--hairline-color);
+    padding-right: var(--medium-padding);
   }
 
   @nest & td {
@@ -63,20 +69,25 @@
 th.sectionHeader {
   text-align: left;
   text-transform: uppercase;
-  padding-left: var(--medium-padding);
-  padding-bottom: var(--small-padding);
-  padding-top: var(--medium-padding);
+  padding: var(--medium-padding) 0 0 !important;
   font-size: var(--font-size-xsmall);
   font-weight: 400;
   letter-spacing: 0.5px;
   color: var(--text-color-secondary);
   width: 100%;
 
+  @nest & > span {
+    display: block;
+    border-bottom: 1px solid #eee;
+    padding: 0 var(--medium-padding) var(--small-padding);
+  }
+
   @nest .table > tbody:first-child & {
-    padding-top: 0;
+    padding-top: 0 !important;
   }
 }
 
-.buttonContainer {
-  composes: bottomButtonContainer from 'part:@sanity/dashboard/widget-styles';
+.footer {
+  composes: footer from 'part:@sanity/dashboard/widget-styles';
+  border-top: 1px solid var(--hairline-color);
 }

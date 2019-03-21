@@ -1,6 +1,6 @@
 :root {
   /* Colors */
-  --body-bg: #f5f5f5;
+  --body-bg: #eceeef;
   --body-text: color(var(--body-bg) contrast(57%));
   --component-bg: #fff;
   --component-text-color: color(var(--component-bg) contrast(80%));
